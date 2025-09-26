@@ -1,3 +1,4 @@
+const MAX_SIZE_COMBINATION = 4;
 const colorsButtons = document.querySelectorAll(".color-square");
 const sendCombinationButton = document.getElementById("send-combination-button");
 let currentSquareCombination: NodeListOf<Element>;
@@ -5,10 +6,9 @@ colorsButtons.forEach((element) => {
     element.addEventListener("click", (e) => {
         //crear nuevo elemento
         currentSquareCombination = document.querySelectorAll(".current-square");
-        console.log(currentSquareCombination.length);
-        if (currentSquareCombination.length < 4){
+        if (currentSquareCombination.length < MAX_SIZE_COMBINATION){
         const newCurrentCombinationButton:HTMLElement = document.createElement("div");
-        newCurrentCombinationButton.classList.add("current-square");
+        newCurrentCombinationButton.classList.add("current-square");//Nos sirve siguiente ejercicio
         //añadir clases de elemento clickado
         if (e.target instanceof HTMLElement){
             e.target.classList.forEach((element) => {
@@ -21,6 +21,7 @@ colorsButtons.forEach((element) => {
         }
 })
 });
+
 
 
 
