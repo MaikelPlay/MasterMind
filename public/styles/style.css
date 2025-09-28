@@ -1,34 +1,34 @@
 #square-buttons, #current-combination{
-    display:flex;
+    display: flex;
     flex-flow: row;
 }
 
-.roja {
-    background-color: red;
-}
-.color-square {
+.color-square{
     margin: 2em;
     height: 5em;
     width: 5em;
 }
 
-.red {
+.rojo {
     background-color: red;
 }
 
-.green {
+.verde {
     background-color: green;
 }
 
-.yellow {
+.amarillo {
     background-color: yellow;
 }
-.pink {
+
+.rosa{
     background-color: pink;
 }
-.blue {
+
+.azul{
     background-color: blue;
 }
-.purple {
+
+.morado{
     background-color: purple;
 }
