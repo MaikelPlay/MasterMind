@@ -16,6 +16,11 @@ export class Combination {
         this.#colors.push(color);
     }
 
+    deleteColors(){
+        this.#colors = [];
+        document.getElementById("current-combination").innerHTML = "";
+    }
+
 
     
 }

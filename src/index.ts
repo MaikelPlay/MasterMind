@@ -9,6 +9,18 @@ const currentCombination = new Combination();
 currentGame.availableColors.forEach((element)=>{
     const colorButton = new CombinationGeneratorControl(element, currentCombination, currentGame);
 });
+document.getElementById("send-combination-button").addEventListener("click", ()=>{
+    const isPlayerWinner:boolean =  currentGame.checkWin(currentCombination);
+    if (isPlayerWinner) {
+        window.location.href="winner.html";
+    }
+    if (!isPlayerWinner){
+        //currentGame.checkLose();
+        //currentGame.sendToHistoric();
+        currentCombination.deleteColors();
+        //currentGame.generateFeedback();
+    }
+})
 
 /*
 

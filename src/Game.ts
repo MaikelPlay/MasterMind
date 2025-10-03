@@ -1,10 +1,11 @@
+import { ColorControl } from "./ColorControl.js";
 import { Combination } from "./Combination.js";
 
 export class Game {
     #maxAttempts: number;
     #combinationSize: number;
     #availableColors: Array<string>;
-    #targetCombination:  Array<string>;
+    #targetCombination:  Combination;
 
     constructor(maxAttempts: number, combinationSize: number,  availableColors: Array<string>){
         this.#maxAttempts = maxAttempts;
@@ -21,7 +22,7 @@ export class Game {
         return this.#combinationSize;
     }
 
-    get targetCombination():Array<string>{
+    get targetCombination():Combination{
         return this.#targetCombination;
     }
 
@@ -29,12 +30,14 @@ export class Game {
         return this.#availableColors;
     }
 
-    generateTargetCombination(combinationSize:number, availableColors: Array<string>):Array<string>{
-       let targetCombination: Array<string>=[];
+    generateTargetCombination(combinationSize:number, availableColors: Array<string>):Combination{
+        const targetCombination = new Combination()
        for(let i=1; i<=combinationSize; i++){
-            targetCombination.push(availableColors[ Math.floor(Math.random()*availableColors.length)]);
+            const newColorControl = new ColorControl(availableColors[ Math.floor(Math.random()*availableColors.length)])
+            targetCombination.colors = newColorControl;
        }
-        return targetCombination;
+       console.log(targetCombination.colors);
+       return targetCombination;
     }
 
     changeButtonState(currentCombination: Combination){
@@ -46,4 +49,22 @@ export class Game {
         }
     }
 
+    checkCombinationsAreEqual(comb1:Combination, comb2:Combination):boolean{
+        let areCombinationsEqual = true;
+        for(let i=0; i<this.combinationSize; i++){
+            if(comb1.colors[i].color.classList[0] != comb2.colors[i].color.classList[0]) {
+                areCombinationsEqual = false;
+                break;
+            }
+        }
+        
+        return areCombinationsEqual;
+    }
+
+    checkWin(currentCombination:Combination):boolean{
+        let isPlayerWinner = false;
+        const areCombinationsEqual = this.checkCombinationsAreEqual(currentCombination, this.targetCombination);
+        if (areCombinationsEqual) isPlayerWinner = true;
+        return isPlayerWinner;
+    }
 }
