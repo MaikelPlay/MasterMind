@@ -5,7 +5,7 @@ import { Game } from "./Game.js";
 export class CurrentCombinationControl extends ColorControl{
     #indexAtCurrentCombination: number;
     constructor(color: string, index:number, currentCombination: Combination, game: Game){
-        super(color);
+        super(color, "color-square");
         this.#indexAtCurrentCombination = index;
         this.render();
         this.color.addEventListener("click", ()=>{

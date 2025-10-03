@@ -5,9 +5,9 @@ import { IPrintable } from "./IPrintable.js";
 export class ColorControl{
     #color: HTMLElement;
 
-    constructor(color: string){
+    constructor(color: string, sizeColorSquareClass: string){
         const colorButton: HTMLElement = document.createElement("div");
-        colorButton.classList.add(color, "color-square");
+        colorButton.classList.add(color, sizeColorSquareClass);
         this.#color = colorButton;
        
         

@@ -1,12 +1,26 @@
-#square-buttons, #current-combination, .color-combination{
+body, #square-buttons, #current-combination, .color-combination, .historic-color-combination{
     display: flex;
     flex-flow: row;
+}
+
+#game-controls{
+    width: 65%;
+}
+
+#historic {
+    width: 25;
 }
 
 .color-square{
     margin: 2em;
     height: 5em;
     width: 5em;
+}
+
+.historic-color-square{
+    margin: 1em;
+    height: 2.5em;
+    width: 2.5em;
 }
 
 .rojo {

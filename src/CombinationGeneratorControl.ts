@@ -6,7 +6,7 @@ import { Game } from "./Game.js";
 export class CombinationGeneratorControl extends ColorControl{
     
     constructor(color: string, currentCombination: Combination, game: Game){
-            super(color);
+            super(color, "color-square");
             this.render();
             this.color.addEventListener("click", ()=>{
                 if (currentCombination.colors.length < game.combinationSize){

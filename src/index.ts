@@ -15,18 +15,17 @@ document.getElementById("send-combination-button").addEventListener("click", ()=
     const isPlayerLoser: boolean = (currentGame.currentAttempt == currentGame.maxAttempts && !isPlayerWinner)
     if (isPlayerWinner) window.location.href="winner.html";
     if (isPlayerLoser) window.location.href="loser.html";
-    if (!isPlayerWinner){
-        //currentGame.checkLose();
-        //currentGame.sendToHistoric();
+    if (!isPlayerWinner && !isPlayerLoser){
+        currentCombination.renderToHistoric();
         currentCombination.deleteColors();
-        //currentGame.generateFeedback();
+        currentGame.generateFeedback(currentCombination);
     }
 })
 
 /*
 
 
-3. Comprobar derrota.
+
 4. Añadir combinación a histórico.
 5. Dar feedback de la combinación enviada.
 

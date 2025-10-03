@@ -43,7 +43,7 @@ export class Game {
     generateTargetCombination(combinationSize:number, availableColors: Array<string>):Combination{
         const targetCombination = new Combination()
        for(let i=1; i<=combinationSize; i++){
-            const newColorControl = new ColorControl(availableColors[ Math.floor(Math.random()*availableColors.length)])
+            const newColorControl = new ColorControl(availableColors[ Math.floor(Math.random()*availableColors.length)], "color-square");
             targetCombination.colors = newColorControl;
        }
        console.log(targetCombination.colors);
@@ -76,5 +76,9 @@ export class Game {
         const areCombinationsEqual = this.checkCombinationsAreEqual(currentCombination, this.targetCombination);
         if (areCombinationsEqual) isPlayerWinner = true;
         return isPlayerWinner;
+    }
+
+    generateFeedback(colorCombination: Combination){
+        
     }
 }
