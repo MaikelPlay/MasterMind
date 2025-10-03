@@ -1,30 +1,21 @@
-/*const redSquare: HTMLElement = document.getElementById("red-square");
-redSquare.addEventListener("click", (e)=>{
-    if (e.target instanceof HTMLElement){
-       if (e.target.classList.contains("red")){
-        e.target.classList.replace("red", "green");
-       } else if (e.target.classList.contains("green")){
-        e.target.classList.replace("green", "red");
-       } 
-    } 
-});*/
-const colorButtons = document.querySelectorAll(".color-square");
-const sendCombinationButton = document.getElementById("send-combination-button");
-let currentSquareCombination: NodeListOf<Element>;
-colorButtons.forEach((element)=>{
-    element.addEventListener("click", (e)=>{
-        currentSquareCombination = document.querySelectorAll(".current-square");
-        console.log(currentSquareCombination.length);
-        if (currentSquareCombination.length<4){
-            const newCurrentCombinationButton:HTMLElement = document.createElement("div");
-            newCurrentCombinationButton.classList.add("current-square");
-            if (e.target instanceof HTMLElement){
-                e.target.classList.forEach((element)=>{
-                    newCurrentCombinationButton.classList.add(element);
-                })   
-            }
-            sendCombinationButton.insertAdjacentElement('beforebegin', newCurrentCombinationButton);
-        }
-        
-    })
-})
+import { ColorControl } from "./ColorControl.js";
+import { Combination } from "./Combination.js";
+import { CombinationGeneratorControl } from "./CombinationGeneratorControl.js";
+import { Game } from "./Game.js";
+
+
+const currentGame = new Game(10, 4, ["rojo", "amarillo", "azul", "rosa", "verde", "morado"]);
+const currentCombination = new Combination();
+currentGame.availableColors.forEach((element)=>{
+    const colorButton = new CombinationGeneratorControl(element, currentCombination, currentGame);
+});
+
+/*
+
+2. Comprobar victoria.
+3. omprobar derrota.
+4. Añadir combinación a histórico.
+5. Dar feedback de la combinación enviada.
+
+
+*/
