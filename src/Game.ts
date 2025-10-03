@@ -6,12 +6,14 @@ export class Game {
     #combinationSize: number;
     #availableColors: Array<string>;
     #targetCombination:  Combination;
+    #currentAttempt: number;
 
     constructor(maxAttempts: number, combinationSize: number,  availableColors: Array<string>){
         this.#maxAttempts = maxAttempts;
         this.#combinationSize = combinationSize;
         this.#availableColors = availableColors;
         this.#targetCombination = this.generateTargetCombination(combinationSize, availableColors);
+        this.#currentAttempt = 0;
     }
      
     get maxAttempts():number{
@@ -28,6 +30,14 @@ export class Game {
 
     get availableColors():Array<string>{
         return this.#availableColors;
+    }
+
+    get currentAttempt():number {
+        return this.#currentAttempt;
+    }
+
+    incrementCurrentAttempt():void{
+        this.#currentAttempt++;
     }
 
     generateTargetCombination(combinationSize:number, availableColors: Array<string>):Combination{

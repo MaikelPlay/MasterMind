@@ -10,10 +10,11 @@ currentGame.availableColors.forEach((element)=>{
     const colorButton = new CombinationGeneratorControl(element, currentCombination, currentGame);
 });
 document.getElementById("send-combination-button").addEventListener("click", ()=>{
+    currentGame.incrementCurrentAttempt();
     const isPlayerWinner:boolean =  currentGame.checkWin(currentCombination);
-    if (isPlayerWinner) {
-        window.location.href="winner.html";
-    }
+    const isPlayerLoser: boolean = (currentGame.currentAttempt == currentGame.maxAttempts && !isPlayerWinner)
+    if (isPlayerWinner) window.location.href="winner.html";
+    if (isPlayerLoser) window.location.href="loser.html";
     if (!isPlayerWinner){
         //currentGame.checkLose();
         //currentGame.sendToHistoric();
@@ -24,8 +25,8 @@ document.getElementById("send-combination-button").addEventListener("click", ()=
 
 /*
 
-2. Comprobar victoria.
-3. omprobar derrota.
+
+3. Comprobar derrota.
 4. Añadir combinación a histórico.
 5. Dar feedback de la combinación enviada.
 
