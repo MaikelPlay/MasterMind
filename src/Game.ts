@@ -124,5 +124,6 @@ export class Game {
         this.renderFeedback(qtyRightColorPositions, "rojo");
         const qtyWrongPositions = this.manageWrongPositions(guessColorCombination, targetColorCombination);
         this.renderFeedback(qtyWrongPositions, "negro");
+        console.log("Hola soy Jano");
     }
 }
