@@ -34,7 +34,13 @@ export class Combination {
         document.getElementById("historic").insertAdjacentElement("afterbegin", newHistoricContainer);
     }
 
-
+    createColorStringArray():Array<string>{
+        let colors: Array<string> = [];
+        for(let i=0; i<this.#colors.length; i++){
+            colors.push(this.#colors[i].color.classList[0]);
+        }
+        return colors;
+    }
 
 
     
