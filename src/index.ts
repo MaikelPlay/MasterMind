@@ -17,8 +17,9 @@ document.getElementById("send-combination-button").addEventListener("click", ()=
     if (isPlayerLoser) window.location.href="loser.html";
     if (!isPlayerWinner && !isPlayerLoser){
         currentCombination.renderToHistoric();
+        currentGame.generateFeedback(currentCombination, currentGame.targetCombination);
         currentCombination.deleteColors();
-        currentGame.generateFeedback(currentCombination);
+        
     }
 })
 

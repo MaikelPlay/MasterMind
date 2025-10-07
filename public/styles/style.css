@@ -1,4 +1,4 @@
-body, #square-buttons, #current-combination, .color-combination, .historic-color-combination{
+body, #square-buttons, #current-combination, .color-combination, .historic-color-combination, .feedback-container{
     display: flex;
     flex-flow: row;
 }
@@ -17,10 +17,23 @@ body, #square-buttons, #current-combination, .color-combination, .historic-color
     width: 5em;
 }
 
+.historic-container{
+    display: flex;
+    flex-flow: row;
+    align-items: flex-end;
+}
+
 .historic-color-square{
-    margin: 1em;
+    margin: 1em 1em 0em 1em;
     height: 2.5em;
     width: 2.5em;
+}
+
+.feedback-circle{
+    margin: 0.5em;
+    height: 1.5em;
+    width: 1.5em;
+    border-radius: 50%;
 }
 
 .rojo {
@@ -45,4 +58,8 @@ body, #square-buttons, #current-combination, .color-combination, .historic-color
 
 .morado{
     background-color: purple;
+}
+
+.black{
+    background-color: black;
 }

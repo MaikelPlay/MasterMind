@@ -22,14 +22,16 @@ export class Combination {
     }
 
     renderToHistoric(){
-        const newHistoricNode: HTMLElement = document.createElement("p");
+        const newHistoricContainer: HTMLElement = document.createElement("p");
+        newHistoricContainer.classList.add("historic-container");
+        const newHistoricNode: HTMLElement = document.createElement("div");
         newHistoricNode.classList.add("historic-color-combination");
         for (let i=0; i<this.#colors.length; i++){
             const newCurrentCombinationElement: ColorControl = new ColorControl(this.#colors[i].color.classList[0], "historic-color-square");
             newHistoricNode.insertAdjacentElement("beforeend", newCurrentCombinationElement.color);
-            //newHistoricCombination.colors.push(newCurrentCombinationElement);
         }
-        document.getElementById("historic").insertAdjacentElement("afterbegin", newHistoricNode);
+        newHistoricContainer.insertAdjacentElement("afterbegin", newHistoricNode);
+        document.getElementById("historic").insertAdjacentElement("afterbegin", newHistoricContainer);
     }
 
 
