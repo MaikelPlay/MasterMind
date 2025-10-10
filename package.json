@@ -1,7 +1,6 @@
 {
-  "name": "frontend_vanillajs",
+  "name": "frontend_vanillajs_1",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -11,6 +10,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "description": "",
   "devDependencies": {
     "typescript": "^5.9.2"
   }

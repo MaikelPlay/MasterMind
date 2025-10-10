@@ -1,12 +1,39 @@
-#square-buttons, #current-combination{
+body, #square-buttons, #current-combination, .color-combination, .historic-color-combination, .feedback-container{
     display: flex;
     flex-flow: row;
+}
+
+#game-controls{
+    width: 65%;
+}
+
+#historic {
+    width: 25;
 }
 
 .color-square{
     margin: 2em;
     height: 5em;
     width: 5em;
+}
+
+.historic-container{
+    display: flex;
+    flex-flow: row;
+    align-items: flex-end;
+}
+
+.historic-color-square{
+    margin: 1em 1em 0em 1em;
+    height: 2.5em;
+    width: 2.5em;
+}
+
+.feedback-circle{
+    margin: 0.5em;
+    height: 1.5em;
+    width: 1.5em;
+    border-radius: 50%;
 }
 
 .rojo {
@@ -31,4 +58,8 @@
 
 .morado{
     background-color: purple;
+}
+
+.negro{
+    background-color: black;
 }

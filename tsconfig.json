@@ -2,11 +2,9 @@
   "compilerOptions": {
     "module": "nodenext",
     "moduleResolution": "nodenext",
-    "target": "es2020",
-
-    // Other Outputs
+    "target": "esnext",
     "sourceMap": true,
-    "outDir": "dist",
+    "outDir": "dist"
   },
   "include": ["src/**/*"],
 }
